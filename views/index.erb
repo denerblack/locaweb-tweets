@@ -1,0 +1,26 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Most Relevants</a></li>
+  <li><a data-toggle="tab" href="#menu1">Most Mentions1</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>HOME</h3>
+    <p><%= @most_relevants %></p>
+    <table class="table table-striped">
+      <% @most_relevants.each do |tweet| %>
+        <tr>
+          <td>
+          <a href=<%= tweet['user']['profile']['url'] %>>
+            <%= "@#{tweet['user']['profile']['screen_name']}" %>
+          </a>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Menu 1</h3>
+    <p>Some content in menu 1.</p>
+  </div>
+</div>
