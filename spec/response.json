@@ -1086,6 +1086,113 @@
       "in_reply_to_screen_name": "locaweb",
       "source": "web",
       "in_reply_to_status_id": null
+    },
+    {
+      "coordinates": null,
+      "favorited": false,
+      "truncated": false,
+      "created_at": "Mon Sep 24 03:35:21 +0000 2012",
+      "id_str": "39272",
+      "entities": {
+        "urls": [],
+        "hashtags": [],
+        "user_mentions": [
+          {
+            "screen_name": "pearl_wuckert",
+            "name": "Pearl Wuckert",
+            "id": 49607,
+            "id_str": "49607",
+            "indices": [
+              2,
+              16
+            ]
+          },
+           {
+            "screen_name": "locaweb",
+            "name": "Locaweb",
+            "id": 42,
+            "id_str": "42",
+            "indices": [
+              48,
+              56
+            ]
+          }       ]
+      },
+      "in_reply_to_user_id_str": "",
+      "contributors": null,
+      "text": "I @pearl_wuckert the transmitter, we can get to the CSS matrix through the multi-byte HDD firewall!, @locaweb",
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "retweet_count": 0,
+      "in_reply_to_status_id_str": "",
+      "id": 39272,
+      "geo": null,
+      "retweeted": false,
+      "in_reply_to_user_id": null,
+      "place": null,
+      "favorite_count": 0,
+      "user": {
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_background_tile": false,
+        "name": "Terry Mr Schmeler",
+        "profile_image_url": "http://a0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+        "location": "LA, CA",
+        "follow_request_sent": null,
+        "profile_link_color": "0084B4",
+        "is_translator": false,
+        "id_str": "136856",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "expanded_url": null,
+                "url": "",
+                "indices": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "default_profile": true,
+        "contributors_enabled": false,
+        "favourites_count": 42,
+        "url": null,
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "utc_offset": -28800,
+        "id": 136856,
+        "profile_use_background_image": true,
+        "listed_count": 2,
+        "profile_text_color": "333333",
+        "lang": "en",
+        "followers_count": 373,
+        "protected": false,
+        "notifications": null,
+        "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_color": "C0DEED",
+        "verified": false,
+        "geo_enabled": true,
+        "time_zone": "Pacific Time (US & Canada)",
+        "description": "Born 330 Live 310",
+        "default_profile_image": false,
+        "profile_background_image_url": "http://a0.twimg.com/images/themes/theme1/bg.png",
+        "statuses_count": 579,
+        "friends_count": 373,
+        "following": null,
+        "show_all_inline_media": false,
+        "screen_name": "terry_mr_schmeler"
+      },
+      "in_reply_to_screen_name": "",
+      "source": "web",
+      "in_reply_to_status_id": null
     }
   ]
 }

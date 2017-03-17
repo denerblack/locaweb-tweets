@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <% tweets.each do |tweet| %>
+    <tr>
+      <td>
+        <strong>User:</strong>
+        <a href=<%= tweet['user']['profile']['url'] %>>
+          <%= "@#{tweet['user']['profile']['screen_name']}" %>
+        </a>
+        <p>
+        <strong>Followers: </strong> <%= tweet['user']['info']['followers_count'] %>
+        </p>
+      </td>
+      <td>
+        <strong>Tweet: </strong> <%= tweet['tweet']['content'] %>
+      <p>
+        <strong>At: </strong> <%= tweet['tweet']['date'] %>
+        <strong>Reweets: </strong> <%= tweet['tweet']['retweet_count'] %>
+        <strong>Likes: </strong> <%= tweet['tweet']['favorite_count'] %>
+      </p>
+      </td>
+    </tr>
+  <% end %>
+</table>

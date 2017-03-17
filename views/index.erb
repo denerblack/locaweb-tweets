@@ -1,26 +1,28 @@
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#home">Most Relevants</a></li>
-  <li><a data-toggle="tab" href="#menu1">Most Mentions1</a></li>
+  <li><a data-toggle="tab" href="#menu1">Most Mentions</a></li>
 </ul>
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <h3>HOME</h3>
-    <p><%= @most_relevants %></p>
-    <table class="table table-striped">
-      <% @most_relevants.each do |tweet| %>
-        <tr>
-          <td>
-          <a href=<%= tweet['user']['profile']['url'] %>>
-            <%= "@#{tweet['user']['profile']['screen_name']}" %>
-          </a>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+    <%= erb(:tweet_info, locals: { tweets: @most_relevants }) %>
   </div>
   <div id="menu1" class="tab-pane fade">
-    <h3>Menu 1</h3>
-    <p>Some content in menu 1.</p>
+    <table class="table table-striped">
+      <tbody>
+        <% @most_mentions.to_a.each_with_index do |tweet, i| %>
+          <tr data-toggle="collapse" data-target="#table<%=i%>" class="accordion-toggle hiddenRow">
+            <td><%= tweet[0] %></td>
+          </tr>
+          <tr class="hiddenRow" >
+            <td colspan="2" class="hiddenRow">
+                <div class="accordian-body collapse" id="table<%=i%>">
+                  <%= erb(:tweet_info, locals: { tweets: tweet[1] }) %>
+                </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

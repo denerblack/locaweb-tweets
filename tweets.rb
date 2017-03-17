@@ -43,7 +43,9 @@ module Locaweb
       response = Net::HTTP.start(URI.hostname, URI.port) do |http|
         http.request(request)
       end
-      JSON.parse(response.body)
+      result = JSON.parse(response.body)
+      result["statuses"].each { |tweet| DateTime.parse(tweet['created_at']).strftime("%d/%m/%Y %H:%M:%S") }
+      result
     end
 
     def sort(tweets)

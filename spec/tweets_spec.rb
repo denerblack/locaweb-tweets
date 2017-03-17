@@ -8,16 +8,15 @@ RSpec.describe Locaweb::Tweets do
   describe 'most relevants' do
     it 'lists most relevants' do
       most_relevants = JSON tweets.most_relevants
-      puts most_relevants
-      expect(most_relevants.count).to eq 3
-      expect(most_relevants[0].keys).to eq(['user', 'tweet'])
+      expect(most_relevants.count).to eq(4)
     end
   end
 
   describe 'most_mentions' do
     it 'lists most mentions' do
-      most_mentions = tweets.most_mentions
-      expect(JSON(most_mentions).keys).to eq(['berneice_osinski', 'jazmyne_murray', 'terry_mr_schmeler'])
+      most_mentions = JSON tweets.most_mentions
+      expect(most_mentions.keys).to eq(['berneice_osinski', 'jazmyne_murray', 'terry_mr_schmeler'])
+      expect(most_mentions['terry_mr_schmeler'].count).to eq(2)
     end
   end
 
