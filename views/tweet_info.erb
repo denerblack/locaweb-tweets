@@ -3,19 +3,19 @@
     <tr>
       <td>
         <strong>User:</strong>
-        <a href=<%= tweet['user']['profile']['url'] %>>
-          <%= "@#{tweet['user']['profile']['screen_name']}" %>
+        <a href=<%= tweet[:link] %>>
+          <%= "@#{tweet[:screen_name]}" %>
         </a>
         <p>
-        <strong>Followers: </strong> <%= tweet['user']['info']['followers_count'] %>
+        <strong>Followers: </strong> <%= tweet[:followers_count] %>
         </p>
       </td>
       <td>
-        <strong>Tweet: </strong> <%= tweet['tweet']['content'] %>
+        <strong>Tweet: </strong> <%= tweet[:text] %>
       <p>
-        <strong>At: </strong> <%= tweet['tweet']['date'] %>
-        <strong>Reweets: </strong> <%= tweet['tweet']['retweet_count'] %>
-        <strong>Likes: </strong> <%= tweet['tweet']['favorite_count'] %>
+        <strong>At: </strong> <%= tweet[:date] %>
+        <strong>Reweets: </strong> <%= tweet[:retweet_count] %>
+        <strong>Likes: </strong> <%= tweet[:favorite_count] %>
       </p>
       </td>
     </tr>

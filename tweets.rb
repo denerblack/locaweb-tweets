@@ -7,7 +7,7 @@ module Locaweb
     URI = URI('http://tweeps.locaweb.com.br/tweeps')
 
     def most_relevants
-     JSON sort(eligibles).map { |tweet| fields(tweet) }
+     sort(eligibles).map { |tweet| fields(tweet) }
     end
 
     def most_mentions
@@ -18,7 +18,6 @@ module Locaweb
       mentions.each do |key, value|
         mentions[key] = sort(value).map! { |tweet| fields(tweet) }
       end
-      JSON mentions
     end
 
     private
@@ -43,9 +42,7 @@ module Locaweb
       response = Net::HTTP.start(URI.hostname, URI.port) do |http|
         http.request(request)
       end
-      result = JSON.parse(response.body)
-      result["statuses"].each { |tweet| DateTime.parse(tweet['created_at']).strftime("%d/%m/%Y %H:%M:%S") }
-      result
+      JSON.parse(response.body)
     end
 
     def sort(tweets)
@@ -59,22 +56,16 @@ module Locaweb
     end
 
     def fields(tweet)
-      result = {}
-      result[:user] = {}
-      result[:user][:profile] = {
+      {
+        followers_count: tweet['user']['followers_count'],
         screen_name: tweet['user']['screen_name'],
-        url: tweet['user']['profile_image_url']
+        profile_link: tweet['user']['profile_image_url'],
+        favorite_count: tweet['favorite_count'],
+        text: tweet['text'],
+        link: '',
+        created_at: tweet['created_at'],
+        retweet_count: tweet['retweet_count']
       }
-      result[:user][:info] = {
-        followers_count: tweet['user']['followers_count']
-      }
-      result[:tweet] = {
-        content: tweet['text'],
-        date: tweet['created_at'],
-        retweet_count: tweet['retweet_count'],
-        favorite_count: tweet['favorite_count']
-      }
-      result
     end
   end
 end
